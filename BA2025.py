@@ -55,6 +55,14 @@ fig = px.sunburst(
     maxdepth=2
 )
 
+fig.update_layout(
+    width=900,
+    height=700,
+    margin=dict(t=40, l=0, r=0, b=0),
+    title_font_size=24,
+    legend_font_size=14
+)
+
 st.plotly_chart(fig, use_container_width=True)
 
 fig.write_html("index.html", full_html=True, include_plotlyjs="**embed**")
