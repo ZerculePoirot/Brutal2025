@@ -35,6 +35,34 @@ view_option = st.selectbox(
     ("Country → Genre", "Genre → Country")
 )
 
+custom_colors = {
+    'Heavy metal': '#1f77b4',       # blue
+    'Metalcore': '#ff7f0e',         # orange
+    'Hardcore': '#2ca02c',          # green
+    'Rock': '#d62728',              # red
+    'Deathcore': '#9467bd',         # purple
+    'Death metal': '#8c564b',       # brown
+    'Grindcore': '#e377c2',         # pink
+    'Black metal': '#7f7f7f',       # gray
+    'Jazz': '#bcbd22',              # olive
+    'Thrash metal': '#17becf',      # cyan
+    'Doom metal': '#aec7e8',        # light blue
+    'Post-metal': '#ffbb78',        # light orange
+    'Industrial metal': '#98df8a',  # light green
+    'Progressive metal': '#ff9896', # light red
+    'Nu metal': '#c5b0d5',          # light purple
+    'Sludge': '#c49c94',            # light brown
+    'Stoner metal': '#f7b6d2',      # light pink
+    'Avant-garde metal': '#c7c7c7', # light gray
+    'Groove metal': '#dbdb8d',      # light olive
+    'Gothic metal': '#9edae5',      # light cyan
+    'Synthwave': '#393b79',         # dark blue
+    'Industrial': '#637939',        # dark green
+    'Viking metal': '#8c6d31',      # dark brown
+    'Gothic rock': '#843c39',       # dark red
+    'Rave metal': '#7b4173'         # dark purple
+}
+
 # Decide path based on selection
 if view_option == "Country → Genre":
     sunburst_path = ['Country', 'Genre simple', 'Band', 'Details']
@@ -50,8 +78,8 @@ fig = px.sunburst(
     df,
     path=sunburst_path,
     title='Brutal Assault 2025',
-    color=sunburst_path[0],
-    color_discrete_sequence=px.colors.qualitative.Set3,
+    color='Genre simple',  # color by genre
+    color_discrete_map=custom_colors,
     maxdepth=2
 )
 
