@@ -41,6 +41,8 @@ if view_option == "Country → Genre":
 else:
     sunburst_path = ['Genre simple', 'Country', 'Band', 'Details']
 
+st.set_page_config(layout="wide")
+
 st.title("Brutal Assault 2025")
 
 # Create interactive sunburst chart
